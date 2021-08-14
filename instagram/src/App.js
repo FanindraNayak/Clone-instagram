@@ -1,4 +1,4 @@
-import './styles/App.css';
+import './styles/App.scss';
 import Navigation from './components/Navigation/Navigation';
 import { ChakraProvider } from "@chakra-ui/react"
 

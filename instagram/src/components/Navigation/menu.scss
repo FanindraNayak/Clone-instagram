@@ -1,0 +1,17 @@
+@import "../../styles/properties";
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    padding-right: 1.5em;
+
+    .icon{
+        margin-right: 1.5em;
+        width:23px;
+        height: 23px;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
