@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./register.css";
 import axios from "axios";
+import "./register.css";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 function Register() {
 	const [dataOfUser, setDataOfUser] = useState({
@@ -11,22 +11,9 @@ function Register() {
 		password: "",
 		confirmPassword: "",
 		userWork: "",
-		phoneNumber: 0,
 		imageData: "",
 		userDescription: "",
 	});
-	console.log(dataOfUser);
-	const array = [
-		"firstName",
-		"midName",
-		"lastName",
-		"email",
-		"password",
-		"confirmPassword",
-		"userWork",
-		"imageData",
-		"userDescription",
-	];
 
 	const handelChange = (e) => {
 		setDataOfUser({ ...dataOfUser, [e.target.name]: e.target.value });
@@ -45,41 +32,111 @@ function Register() {
 				password: "",
 				confirmPassword: "",
 				userWork: "",
-				phoneNumber: 0,
 				imageData: "",
 				userDescription: "",
 			});
 		}
 		console.log(res);
 	};
+	const labes = (name) => {
+		return <label>{name}</label>;
+	};
+
 	return (
 		<div style={{ marginTop: 30 }}>
 			<form>
-				{array.map((value, i) => (
-					<div key={i}>
-						<label style={{ marginRight: 100 }}>{value}</label>
-						<input
-							type={
-								value === "password" || value === "confirmPassword"
-									? "password"
-									: "text"
-							}
-							name={value}
-							onChange={handelChange}
-							value={dataOfUser.value}
-						/>
-						<br />
-						<br />
-					</div>
-				))}
-
+				{labes("First Name")}
+				<input
+					type="text"
+					name="firstName"
+					className="firstName"
+					value={dataOfUser.firstName}
+					onChange={handelChange}
+				/>
 				<br />
-				<Button
-					colorScheme="teal"
-					// onSubmit={handelClick}
-					variant="outline"
-					onClick={handelClick}
-				>
+				<br />
+				{labes("Mid Name")}
+				<input
+					type="text"
+					value={dataOfUser.midName}
+					name="midName"
+					className="midName"
+					onChange={handelChange}
+				/>
+				<br />
+				<br />
+				{labes("Last Name")}
+				<input
+					type="text"
+					value={dataOfUser.lastName}
+					name="lastName"
+					className="lastName"
+					onChange={handelChange}
+				/>
+				<br />
+				<br />
+				{labes("Email")}
+				<input
+					type="text"
+					value={dataOfUser.email}
+					name="email"
+					className="email"
+					onChange={handelChange}
+				/>
+				<br />
+				<br />
+				{labes("Password")}
+				<input
+					type="password"
+					value={dataOfUser.password}
+					name="password"
+					className="password"
+					onChange={handelChange}
+				/>
+				<br />
+				<br />
+				{labes("Confirm Password")}
+				<input
+					type="password"
+					value={dataOfUser.confirmPassword}
+					name="confirmPassword"
+					className="confirmPassword"
+					onChange={handelChange}
+				/>
+				<br />
+				<br />
+				{labes("User Work")}
+				<input
+					type="text"
+					value={dataOfUser.userWork}
+					name="userWork"
+					className="userWork"
+					onChange={handelChange}
+				/>
+				<br />
+				<br />
+				{labes("Image")}
+				<input
+					type="text"
+					value={dataOfUser.imageData}
+					name="imageData"
+					className="imageData"
+					onChange={handelChange}
+				/>
+				<br />
+				<br />
+				{labes("User Description")}
+				<input
+					type="text"
+					value={dataOfUser.userDescription}
+					name="userDescription"
+					className="userDescription"
+					onChange={handelChange}
+				/>
+				<br />
+				<br />
+				<br />
+				<Button colorScheme="teal" variant="outline" onClick={handelClick}>
 					Registration
 				</Button>
 			</form>
