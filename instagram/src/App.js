@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Cards from "./components/Cards/Cards";
 import Sidebar from "./components/Cards/Sidebar";
 import Register from "./components/Register/Register";
+import Login from "./components/Register/Login";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
@@ -15,9 +16,10 @@ function App() {
 						<Router>
 							<Switch>
 								<Route exact path="/">
-									<Register />
+									<Login />
 								</Route>
 								<Route exact path="/home">
+									<Register />
 									<Cards />
 									<Sidebar />
 								</Route>
